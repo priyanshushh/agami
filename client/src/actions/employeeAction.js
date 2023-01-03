@@ -49,7 +49,7 @@ export const createEmployee =
   async (dispatch) => {
     dispatch(employeeRequest());
     try {
-      const res = await axios.post("http://localhost:5000/api/v1/register", {
+      const res = await axios.post(`${process.env.baseLink}/register`, {
         name,
         email,
         password,
@@ -68,7 +68,7 @@ export const loginEmployee =
   async (dispatch) => {
     dispatch(employeeLoginRequest());
     try {
-      const res = await axios.post("http://localhost:5000/api/v1/login", {
+      const res = await axios.post(`${process.env.baseLink}/login`, {
         email,
         password,
       });
@@ -85,7 +85,7 @@ export const loginEmployee =
 export const adminDashboard = () => async (dispatch) => {
   dispatch(adminRequest());
   try {
-    const res = await axios.get("http://localhost:5000/api/v1/admin");
+    const res = await axios.get(`${process.env.baseLink}/admin`);
     dispatch(adminSuccess(res.data.users));
   } catch (err) {
     dispatch(adminFail());
@@ -98,10 +98,9 @@ export const deleteEmployee =
     dispatch(adminRequest());
     // console.log(id);
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/v1/removeEmployee",
-        { id }
-      );
+      const res = await axios.post(`${process.env.baseLink}/removeEmployee`, {
+        id,
+      });
       // console.log(res);
       dispatch(adminSuccess(res.data.users));
     } catch (err) {
@@ -114,7 +113,7 @@ export const updateUserRole =
   async (dispatch) => {
     dispatch(updateUserRoleRequest());
     try {
-      const res = await axios.post("http://localhost:5000/api/v1/updateUser", {
+      const res = await axios.post(`${process.env.baseLink}/updateUser`, {
         id,
         newRole,
       });
@@ -133,7 +132,7 @@ export const addInTeam =
     // console.log(id, userId, rating, name);
 
     try {
-      const res = await axios.post("http://localhost:5000/api/v1/addInTeam", {
+      const res = await axios.post(`${process.env.baseLink}/addInTeam`, {
         id,
         userId,
         rating,
@@ -154,7 +153,7 @@ export const addEmpWork =
     // console.log(date, projectName, startDate, endDate, workingHours, userId);
     dispatch(employeeWorkRequest());
     try {
-      const res = await axios.post("http://localhost:5000/api/v1/addWork", {
+      const res = await axios.post(`${process.env.baseLink}/addWork`, {
         date,
         projectName,
         startDate,
@@ -177,7 +176,7 @@ export const employeeWorkList =
     // console.log(id);
     try {
       const res = await axios.post(
-        `http://localhost:5000/api/v1/findEmpWork/${id}`,
+        `${process.env.baseLink}/findEmpWork/${id}`,
         {
           id,
         }
@@ -196,7 +195,7 @@ export const updateUserRatings =
     dispatch(userRatingsRequest());
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/v1/updateUserRatings",
+        `${process.env.baseLink}/updateUserRatings`,
         { id, newRating }
       );
       console.log(res);
