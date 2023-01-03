@@ -68,7 +68,7 @@ export const loginEmployee =
   async (dispatch) => {
     dispatch(employeeLoginRequest());
     try {
-      const res = await axios.post(`${process.env.baseLink}/login`, {
+      const res = await axios.post(`https://agami-production.up.railway.app/api/v1/login`, {
         email,
         password,
       });
