@@ -165,8 +165,9 @@ export const addInTeam =
 export const addEmpWork =
   ({ date, projectName, startDate, endDate, workingHours, userId, userName }) =>
   async (dispatch) => {
-    // console.log(date, projectName, startDate, endDate, workingHours, userId);
     dispatch(employeeWorkRequest());
+    // console.log(date, projectName, startDate, endDate, workingHours, userId);
+
     try {
       const res = await axios.post(
         "https://agami-production.up.railway.app/api/v1/addWork",
@@ -199,8 +200,8 @@ export const employeeWorkList =
           id,
         }
       );
+
       dispatch(employeeWorkListSuccess(res.data.work));
-      // console.log(res);
     } catch (error) {
       dispatch(employeeWorkListFail());
     }
@@ -216,7 +217,7 @@ export const updateUserRatings =
         "https://agami-production.up.railway.app/api/v1/updateUserRatings",
         { id, newRating }
       );
-      console.log(res);
+      // console.log(res);
       dispatch(userRatingsSuccess(res.data.user));
     } catch (error) {
       dispatch(userRatingsFail());

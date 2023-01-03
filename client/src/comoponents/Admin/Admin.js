@@ -39,6 +39,7 @@ const Admin = () => {
         <p>Update Role</p>
       </div>
 
+      {/* {users && console.log(users)} */}
       {users &&
         users.map((u, key) => (
           <div key={key} className="employee">
@@ -55,10 +56,12 @@ const Admin = () => {
             {user.role === "admin" && (
               <select
                 onChange={(e) => {
-                  window.location.reload();
                   dispatch(
                     updateUserRole({ id: u._id, newRole: e.target.value })
                   );
+                  setTimeout(() => {
+                    window.location.reload();
+                  }, 3000);
                 }}
               >
                 <option value="employee">None</option>

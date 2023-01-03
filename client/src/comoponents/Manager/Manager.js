@@ -99,13 +99,15 @@ const Manager = () => {
                   </p>
                   <select
                     onChange={(e) => {
-                      window.location.reload();
                       dispatch(
                         updateUserRatings({
                           id: u._id,
                           newRating: e.target.value,
                         })
                       );
+                      setTimeout(() => {
+                        window.location.reload();
+                      }, 3000);
                     }}
                     className="managerFeatures"
                   >

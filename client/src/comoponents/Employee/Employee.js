@@ -19,8 +19,9 @@ const Employee = () => {
     dispatch(employeeWorkList({ id: id }));
   }, [dispatch, id]);
   const work = useSelector((state) => state.employeeWorkList);
+
   const handleSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
 
     dispatch(
       addEmpWork({
@@ -33,7 +34,13 @@ const Employee = () => {
         userName: user.name,
       })
     );
+
+    setOpenWork(false);
+    setTimeout(() => {
+      window.location.reload();
+    }, 3000);
   };
+
   return (
     <div className="homeContAdmin">
       {/* {loading && (
@@ -70,6 +77,7 @@ const Employee = () => {
               });
             }}
             placeholder="Enter Today's Date"
+            value={userData.date}
             type="text"
           />
           <input
@@ -80,6 +88,7 @@ const Employee = () => {
               });
             }}
             placeholder="Enter Project Name"
+            value={userData.projectName}
             type="text"
           />
           <input
@@ -91,6 +100,7 @@ const Employee = () => {
             }}
             placeholder="Enter Project Start Date"
             type="text"
+            value={userData.startDate}
           />
           <input
             onChange={(e) => {
@@ -99,6 +109,7 @@ const Employee = () => {
                 endDate: e.target.value,
               });
             }}
+            value={userData.endDate}
             placeholder="Enter Project End Date"
             type="text"
           />
@@ -109,6 +120,7 @@ const Employee = () => {
                 workingHours: e.target.value,
               });
             }}
+            value={userData.workingHours}
             placeholder="Enter Your Working Hours"
             type="text"
           />
