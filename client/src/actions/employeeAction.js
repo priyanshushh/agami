@@ -49,11 +49,14 @@ export const createEmployee =
   async (dispatch) => {
     dispatch(employeeRequest());
     try {
-      const res = await axios.post(`${process.env.baseLink}/register`, {
-        name,
-        email,
-        password,
-      });
+      const res = await axios.post(
+        "https://agami-production.up.railway.app/api/v1/register",
+        {
+          name,
+          email,
+          password,
+        }
+      );
       // console.log(res);
       dispatch(employeeSuccess(res.data.user));
       localStorage.setItem("userData", JSON.stringify(res.data.user));
@@ -68,10 +71,13 @@ export const loginEmployee =
   async (dispatch) => {
     dispatch(employeeLoginRequest());
     try {
-      const res = await axios.post(`${process.env.baseLink}/login`, {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        "https://agami-production.up.railway.app/api/v1/login",
+        {
+          email,
+          password,
+        }
+      );
       // console.log(res.data.employee);
       dispatch(employeeLoginSuccess(res.data.employee[0]));
 
@@ -85,7 +91,9 @@ export const loginEmployee =
 export const adminDashboard = () => async (dispatch) => {
   dispatch(adminRequest());
   try {
-    const res = await axios.get(`${process.env.baseLink}/admin`);
+    const res = await axios.get(
+      "https://agami-production.up.railway.app/api/v1/admin"
+    );
     dispatch(adminSuccess(res.data.users));
   } catch (err) {
     dispatch(adminFail());
@@ -98,9 +106,10 @@ export const deleteEmployee =
     dispatch(adminRequest());
     // console.log(id);
     try {
-      const res = await axios.post(`${process.env.baseLink}/removeEmployee`, {
-        id,
-      });
+      const res = await axios.post(
+        "https://agami-production.up.railway.app/api/v1/removeEmployee",
+        { id }
+      );
       // console.log(res);
       dispatch(adminSuccess(res.data.users));
     } catch (err) {
@@ -113,10 +122,13 @@ export const updateUserRole =
   async (dispatch) => {
     dispatch(updateUserRoleRequest());
     try {
-      const res = await axios.post(`${process.env.baseLink}/updateUser`, {
-        id,
-        newRole,
-      });
+      const res = await axios.post(
+        "https://agami-production.up.railway.app/api/v1/updateUser",
+        {
+          id,
+          newRole,
+        }
+      );
       // console.log(res);
 
       dispatch(updateUserRoleSuccess(res.data.user));
@@ -132,12 +144,15 @@ export const addInTeam =
     // console.log(id, userId, rating, name);
 
     try {
-      const res = await axios.post(`${process.env.baseLink}/addInTeam`, {
-        id,
-        userId,
-        rating,
-        name,
-      });
+      const res = await axios.post(
+        "https://agami-production.up.railway.app/api/v1/addInTeam",
+        {
+          id,
+          userId,
+          rating,
+          name,
+        }
+      );
       // console.log(res.data.finalManager);
       localStorage.setItem("userData", JSON.stringify(res.data.finalManager));
       dispatch(addInTeamSuccess(res.data.finalManager));
@@ -153,15 +168,18 @@ export const addEmpWork =
     // console.log(date, projectName, startDate, endDate, workingHours, userId);
     dispatch(employeeWorkRequest());
     try {
-      const res = await axios.post(`${process.env.baseLink}/addWork`, {
-        date,
-        projectName,
-        startDate,
-        endDate,
-        workingHours,
-        userId,
-        userName,
-      });
+      const res = await axios.post(
+        "https://agami-production.up.railway.app/api/v1/addWork",
+        {
+          date,
+          projectName,
+          startDate,
+          endDate,
+          workingHours,
+          userId,
+          userName,
+        }
+      );
       // console.log(res);
       dispatch(employeeWorkSuccess(res.data.work));
     } catch (error) {
@@ -176,7 +194,7 @@ export const employeeWorkList =
     // console.log(id);
     try {
       const res = await axios.post(
-        `${process.env.baseLink}/findEmpWork/${id}`,
+        `https://agami-production.up.railway.app/api/v1/findEmpWork/${id}`,
         {
           id,
         }
@@ -195,7 +213,7 @@ export const updateUserRatings =
     dispatch(userRatingsRequest());
     try {
       const res = await axios.post(
-        `${process.env.baseLink}/updateUserRatings`,
+        "https://agami-production.up.railway.app/api/v1/updateUserRatings",
         { id, newRating }
       );
       console.log(res);
