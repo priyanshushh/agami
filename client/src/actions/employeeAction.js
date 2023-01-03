@@ -72,7 +72,7 @@ export const loginEmployee =
     dispatch(employeeLoginRequest());
     try {
       const res = await axios.post(
-        "https://agami-production.up.railway.app/api/v1/login",
+        `https://agami-production.up.railway.app/api/v1/login`,
         {
           email,
           password,
