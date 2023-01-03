@@ -1,0 +1,36 @@
+.managerCont {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 1vw;
+  padding: 0.5vw;
+  border-radius: 10px;
+  color: white;
+  background-color: rgb(37, 130, 222);
+}
+.managerFeatures {
+  border: 2px solid white;
+  padding: 1vh;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.managerFeatures:hover {
+  transform: scale(1.1);
+}
+.teamMem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  flex-direction: column;
+}
+@media (max-width: 1064px) {
+  .managerFeatures {
+    padding: 0.5vh;
+    margin: 1vh 0;
+  }
+  .teamMem {
+    font-size: 25px;
+  }
+}

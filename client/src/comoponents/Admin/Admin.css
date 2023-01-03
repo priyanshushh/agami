@@ -1,0 +1,57 @@
+.employee {
+  width: 55vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+  margin: 2vh 1vh;
+  font-size: large;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 2vh 0;
+  font-family: sans-serif;
+  text-transform: capitalize;
+  border-radius: 1vh;
+  flex-wrap: wrap;
+}
+
+.homeContAdmin {
+  min-height: 95vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+.model {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(75, 75, 75, 0.092);
+}
+select {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.deleteIcon {
+  cursor: pointer;
+}
+
+@media (max-width: 1064px) {
+  .employee {
+    font-size: medium;
+    gap: 2vh;
+  }
+}
+
+@media (max-width: 750px) {
+  .employee {
+    text-align: center;
+    font-size: 12px;
+    gap: 1vh;
+    width: 95vw;
+  }
+}

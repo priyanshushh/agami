@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  height: 5vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5vw;
+  background-color: rgb(37, 130, 222);
+}
+.logo {
+  color: white;
+  text-decoration: none;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.loginBtn {
+  background-color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+  font-size: auto;
+  transition: 0.4s;
+  padding: 1vh;
+}
+.loginBtn:hover {
+  transform: scale(1.1);
+}
