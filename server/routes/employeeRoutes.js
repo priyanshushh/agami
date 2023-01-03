@@ -10,9 +10,10 @@ const {
   findWork,
   updateUserRatings,
   removeEmployee,
+  basicRequest,
 } = require("../controllers/employeeControllers");
 const router = express.Router();
-
+router.route("/").get(basicRequest);
 router.route("/login").post(employeeLogin);
 router.route("/register").post(employeeRegister);
 router.route("/admin").get(getAllEmployees);

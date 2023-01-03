@@ -1,6 +1,12 @@
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const Employee = require("../models/employeeModel");
 const Work = require("../models/empWorkModel");
+
+exports.basicRequest = catchAsyncErrors(async (req, res) => {
+  res.status(200).json({
+    message: "hellow world",
+  });
+});
 exports.employeeRegister = catchAsyncErrors(async (req, res) => {
   // res.send("working");
   const { name, email, password } = req.body;
