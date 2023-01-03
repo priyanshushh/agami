@@ -11,7 +11,6 @@ Here are some screenshots of the project - <br/>
 ![Screenshot (36)](https://user-images.githubusercontent.com/71705875/210396839-fc2a446d-30a1-48c5-8b99-d461c6388329.png)
 ![Screenshot (34)](https://user-images.githubusercontent.com/71705875/210396775-dd221b1d-a49e-4e72-b78a-6143c73e9788.png)
 ![Screenshot (37)](https://user-images.githubusercontent.com/71705875/210396860-938b306e-d17f-4a16-ac9f-e46b35fc2ec7.png)
-![Screenshot (33)](https://user-images.githubusercontent.com/71705875/210397029-5ca9bd32-5090-4843-b309-5501f45bf4c8.png)
-![Screenshot (39)](https://user-images.githubusercontent.com/71705875/210397059-07fd915f-dfb6-4cd9-9440-c312b38aa271.png)
+
 
 Here is the working project [agami-timesheet](https://agami.vercel.app/)
