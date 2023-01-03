@@ -40,7 +40,7 @@ const Manager = () => {
         <p>Role</p>
       </div>
       <div className="teamMem">
-        <h4>Your Team Members</h4>
+        {teamMembers.length !== 0 && <h4>Your Team Members</h4>}
         {teamMembers.map((member, key) => (
           <div key={key} className="employee">
             <Link

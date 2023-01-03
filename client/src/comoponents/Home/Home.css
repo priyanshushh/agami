@@ -96,6 +96,17 @@ input {
   outline: none;
   color: black;
 }
+.userInformation {
+  font-family: sans-serif;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  line-height: 20px;
+  letter-spacing: 1px;
+  width: 100%;
+  padding: 1vw;
+  background-color: rgb(234, 234, 234);
+}
 
 .userDetails {
   display: flex;
@@ -112,6 +123,7 @@ input {
   /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
   animation: loadAnimeC 0.5s ease-in;
 }
+
 @keyframes loadAnimeC {
   from {
     opacity: 0;

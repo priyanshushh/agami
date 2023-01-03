@@ -26,16 +26,22 @@ const Login = () => {
         password: userData.password,
       })
     );
-    navigator("/register");
-    window.location.reload();
+    navigator("/");
+    setTimeout(() => {
+      window.location.reload();
+    }, 3000);
   };
   // const data = useSelector((state) => state.employeeLogin);
   // data && console.log(data);
   const handleSubmitLogin = (e) => {
     dispatch(loginEmployee(userDataLogin));
     navigator("/");
-
-    alert("If the page isn't opend than reload please it...");
+    setTimeout(() => {
+      window.location.reload();
+    }, 3000);
+    setTimeout(() => {
+      alert("If the page isn't opend than reload it please...");
+    }, 5000);
     // window.location.reload();
   };
   return (

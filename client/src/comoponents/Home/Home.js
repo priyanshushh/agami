@@ -31,6 +31,15 @@ const Home = () => {
           </Link>
         </div>
       )}
+
+      <p className="userInformation">
+        Use <br /> admin@gmail.com to login as admin
+        <br />
+        mgr@gmail.com to login as manager <br />
+        emp1@gmail.com to login employee.
+        <br />
+        <span>Password for all of them is 1234</span>
+      </p>
     </div>
   );
 };
