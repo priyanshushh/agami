@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const corsOptions = {
-  origin: "https://agami-production.up.railway.app/api/v1",
+  origin: "https://agami-production.up.railway.app/api/v1/",
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
